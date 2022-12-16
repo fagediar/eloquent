@@ -25,3 +25,16 @@ Route::get('eloquent', function () {
         echo "$post->id $post->title <br>";
     }
 });
+
+Route::get('posts', function () {
+    $posts = Post::get();
+        
+
+    foreach ($posts as $post) {
+        echo "
+        $post->id
+      {$post->user->name}
+        $post->title <br>";
+
+    }
+});
